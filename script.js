@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             title: 'Project Title',
             description: 'Brief description of the project.',
-            image: 'path/to/image.jpg',
+            image: './images/project.jpg',
             link: '#'
         }
     ];
