@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Lemmy Nanny Details</title>
+    <title>Lemmy Nanny</title>
     <style>
         /* Add any specific styles for your template here */
         .feature-list {
             list-style-type: none;
             padding: 0;
         }
+
         .feature-list li {
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
         }
+
         .feature-list li:before {
             content: "•";
             color: #4CAF50;
@@ -22,23 +25,66 @@
         }
     </style>
 </head>
-<body>
-    <h1>Lemmy Nanny - Detailed Information</h1>
 
+<body>
+    <h1>Lemmy Nanny</h1>
+    <img class="hero-img" src="images/LemmyNannyLogo.png">
     <section>
         <h2>Overview</h2>
-        <p>A powerful tool to monitor Lemmy instances using AI (Ollama local models) and add them to moderation queues.</p>
+        <p>A powerful tool to monitor Lemmy instances using AI (Ollama local models) and add them to moderation queues.
+        </p>
+    </section>
+    <section>
+        <h2>Tech Stack</h2>
+        <ul>
+            <li>.Net 8.0</li>
+            <li>🦙 ollama</li>
+            <li>🧑‍💻 dotNETLemmy</li>
+            <li>📅 SQLite</li>
+        </ul>
     </section>
 
     <section>
-        <h2>Features</h2>
-        <ul class="feature-list">
-            <li>AI-powered content analysis</li>
-            <li>Automated moderation queue management</li>
-            <li>Local model support via Ollama</li>
-            <li>Customizable monitoring rules</li>
-            <li>Detailed reporting and analytics</li>
-        </ul>
+        <div class="align-content-center">
+            <div class="container">
+                <div class="row">
+                    <h1>LemmyNanny an AI bot for the Fediverse!</h1>
+                    <div class="col-12">
+                        Are you a moderator or admin of a Lemmy instance? Feel your userbase is getting a bit unruly? Or
+                        maybe you just want to play with Lemmy and AI? It's up to you how to use LemmyNanny!
+
+                        It can be found on <a href="https://github.com/IsaaacD/LemmyNanny">GitHub</a> so you can pull it
+                        down and start playing. It requires
+                        and <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.Net 8.0</a> to run
+                        LemmyNanny and <a href="https://ollama.com/">Ollama</a> to run the AI model.
+                    </div>
+                    <div class="col-12">
+                        LemmyNanny writes to SQLite database locally, so you can keep records of what's been processed
+                        or not. LemmyNanny stores all posts and comments in a SQLite DB that ensures posts aren't
+                        processed more than once.
+                    </div>
+                </div>
+                <div class="row p-1 mt-2">
+                    <div class="col-12">
+                        LemmyNanny is a software bot to retrieve posts and comments on Lemmy instances and using local
+                        LLM (AI) models to assist with moderation. This site
+                        showcases it being run and allows users on Twitch to interact with content LemmyNanny is
+                        currently triaging.
+                    </div>
+                    <div class="col-12">
+                        The goal would be to have each instance running their own LemmyNanny to ensure clean and safe
+                        content around the globe! Realtime insights!
+                        It's open source, so check it out on <a href="https://github.com/IsaaacD/LemmyNanny"> GitHub -
+                            LemmyNanny</a>.
+                        The source code for a sister site can be found here <a
+                            href="https://github.com/IsaaacD/LemmyNannyWeb">GitHub - LemmyNanny Web</a> (which was
+                        created as a bit of realtime window into the actions of LemmyNanny).
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
     <section>
@@ -52,4 +98,5 @@
 npm start</code></pre>
     </section>
 </body>
+
 </html>

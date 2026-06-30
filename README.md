@@ -13,3 +13,6 @@ A minimalistic portfolio site built with HTML, CSS, and JavaScript.
 Edit the following files:
 - `index.html`: Update title, meta tags, and structure
 - `script.js`: Add your project information
+
+
+IsaaacD.github.io/merbs

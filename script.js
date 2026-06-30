@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let footerHtml = '<div class="footer">';
 
         if (project.githubLink) {
-            footerHtml += '<a href="' + project.githubLink + '" target="_blank">Source Code</a>';
+            footerHtml += '<a href="' + project.githubLink + '">Source Code</a>';
         }
         // if (project.link) {
         //     footerHtml += '<a class="proj-link" href="' + project.link + '" target="_blank">Learn more</a> ';

@@ -102,18 +102,17 @@ h1 {
     margin: 5% auto;
     padding: 20px;
     border-radius: 8px;
-    width: 90%;
     max-width: 1000px;
     position: relative;
-    max-height: 90vh;
+    max-height: 85%;
     overflow-y: auto;
 }
 
 .close {
     color: #aaa;
-    position: absolute;
+    position: fixed;
     right: 20px;
-    top: 15px;
+    top: 20px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -121,4 +120,12 @@ h1 {
 
 .close:hover {
     color: black;
+}
+
+.intro {
+    text-align: left !important;
+}
+
+.hero-img {
+    width: 100%;
 }
