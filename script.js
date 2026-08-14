@@ -1,23 +1,13 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const projects = [
-        // Add your projects here
-        // Example:
-        {
-            title: 'Lemmy Nanny',
-            description: 'A project mostly hand written to use AI (Ollama local models) to monitor Lemmy instances to add to a mod to a mod queue so moderators can keep their Lemmy instances tidy.',
-            image: './images/LemmyNannyLogo.png',
-            link: '#',
-            githubLink: 'https://github.com/IsaaacD/LemmyNanny',
-            template: 'LemmyNanny.html'
-        },
-        {
-            title: 'Another Project',
-            description: 'Description of another project.',
-            image: './images/project.jpg',
-            link: '#',
-            githubLink: 'https://github.com/IsaaacD/LemmyNanny'
-        }
-    ];
+document.addEventListener('DOMContentLoaded', async function () {
+    const projects = await fetch('projects/projects.json')
+        .then(response => response.json())
+        .then(data => {
+            return data.projects;
+        })
+        .catch(error => {
+            console.error('Error fetching projects:', error);
+            return [];
+        });
 
     const projectsContainer = document.querySelector('.projects');
     const modal = document.getElementById('projectModal');
@@ -77,12 +67,16 @@ document.addEventListener('DOMContentLoaded', function () {
         projectsContainer.appendChild(projectCard);
     });
 
-    // Function to load external HTML template
+    // Function to load and parse markdown template
     function loadTemplate(templateUrl) {
         fetch(templateUrl)
             .then(response => response.text())
-            .then(html => {
-                modalContent.innerHTML = html;
+            .then(md => {
+                if (templateUrl.indexOf('.html') > -1) {
+                    modalContent.innerHTML = md;
+                } else {
+                    modalContent.innerHTML = marked.parse(md);
+                }
             })
             .catch(error => {
                 console.error('Error loading template:', error);

@@ -1,0 +1,20 @@
+{
+    "projects": [
+        {
+            "title": "Lemmy Nanny",
+            "description": "A project mostly hand written to use AI (Ollama local models) to monitor Lemmy instances to add to a mod to a mod queue so moderators can keep their Lemmy instances tidy.",
+            "image": "./images/LemmyNannyLogo.png",
+            "link": "#",
+            "githubLink": "https: //github.com/IsaaacD/LemmyNanny",
+            "template": "projects/LemmyNanny.md"
+        },
+        {
+            "title": "Ketamine Dreams",
+            "description": "Started as a fork of LMStudioWebUI, but I have been working on it to make it more user friendly and add more features. I was then playing with AI to make some psychedelic art and then I started to make it a personal art project",
+            "image": "./images/ralph.png",
+            "link": "#",
+            "githubLink": "https: //github.com/IsaaacD/LMStudioWebUI",
+            "template": "projects/KetamineDreams.html"
+        }
+    ]
+}
