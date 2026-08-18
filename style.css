@@ -162,6 +162,10 @@ a:hover {
     border: 1.2px gray dashed;
 }
 
+.modal-content img {
+    max-width: 100%;
+}
+
 .project-card h2 {
     text-align: center;
 }
@@ -184,12 +188,13 @@ a:hover {
 }
 
 .modal-content {
-    margin: 2% auto;
+    margin: 1% auto;
     max-width: 800px;
     position: relative;
     max-height: 82%;
     overflow-y: auto;
     color: #e0e0e0;
+    padding-top: 8px;
 }
 
 .close {
@@ -197,14 +202,13 @@ a:hover {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    float: right;
-    margin-top: -0.5em;
-    position: fixed;
 }
 
 .close-holder {
     text-align: right;
-    margin-top: -1em;
+    position: sticky;
+    top: 0;
+    z-index: 1100;
 }
 
 .close:hover {
