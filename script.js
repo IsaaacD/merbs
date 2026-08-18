@@ -48,14 +48,24 @@ document.addEventListener('DOMContentLoaded', async function () {
     const modalContent = document.getElementById('modalContent');
     const closeBtn = document.querySelector('.close');
 
-    // Close modal when clicking the X button
-    closeBtn.addEventListener('click', function () {
+    function closeModal() {
         modal.style.display = 'none';
-    });
+        history.replaceState(null, '', window.location.pathname);
+    }
+
+    // Close modal when clicking the X button
+    closeBtn.addEventListener('click', closeModal);
 
     // Close modal when clicking outside the content
     window.addEventListener('click', function (event) {
         if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Handle hash change to close modal
+    window.addEventListener('hashchange', function () {
+        if (!window.location.hash) {
             modal.style.display = 'none';
         }
     });
@@ -95,11 +105,24 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (project.template) {
                 loadTemplate(project.template);
                 modal.style.display = 'block';
+                if (project.link) {
+                    window.location.hash = project.link.replace('#', '');
+                }
             }
         });
 
         projectsContainer.appendChild(projectCard);
     });
+
+    // Auto-open modal if URL has a matching hash
+    const hash = window.location.hash;
+    if (hash) {
+        const matched = projects.find(p => p.link === hash);
+        if (matched && matched.template) {
+            loadTemplate(matched.template);
+            modal.style.display = 'block';
+        }
+    }
 
     // Function to load and parse markdown template
     function loadTemplate(templateUrl) {
