@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', async function () {
+    // Initialize Three.js floating text background
+    if (typeof FloatingTextBackground !== 'undefined') {
+        const bg = new FloatingTextBackground({
+            mode: 'background',
+            textCount: 20,
+            particleCount: 200,
+            bgColor: '#0a0a1a',
+            textColor: '#c8d6e5',
+            particleColor: '#6c5ce7',
+            textSpeed: 0.12,
+            textPool: [
+                'DevOps Engineer',
+                'Clean Code',
+                'Solutions Developer',
+                'Cloud Architecture',
+                'CI/CD Pipelines',
+                'Microservices',
+                'Kubernetes',
+                'Automation',
+                'Full Stack',
+                'System Design',
+                'Performance Tuning',
+                'Container Orchestration',
+                'Monitoring & Observability',
+                'GitOps',
+                'Docker',
+                'Linux Systems',
+                'API Development',
+                'Database Design'
+            ]
+        });
+        bg.init();
+        window.addEventListener('resize', () => bg.resize());
+    }
     const projects = await fetch('projects/projects.json')
         .then(response => response.json())
         .then(data => {
@@ -30,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
 
-        let contentHtml = '';
+        let contentHtml = '<span class="click-me">☟</span>';
         if (project.image) {
             contentHtml += '<img class="proj-img" src="' + project.image + '" alt="' + project.title + '">';
         }
