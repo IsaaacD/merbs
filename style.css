@@ -321,6 +321,37 @@ a:hover {
     padding: 20px;
 }
 
+.competencies-card {
+    margin-bottom: 40px;
+}
+
+.competencies-card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.5em;
+    color: #b0b0f9;
+}
+
+.competencies-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.competencies-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+    line-height: 1.5;
+}
+
+.competencies-list li:last-child {
+    border-bottom: none;
+}
+
+.competencies-list li strong {
+    color: #b0b0f9;
+}
+
 .click-me {
     position: absolute;
     top: -0.6rem;
