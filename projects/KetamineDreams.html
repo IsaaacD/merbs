@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ketamine Dreams</title>
+    <style>
+        .scene-card {
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #1a1a2e;
+        }
+
+        .scene-card h3 {
+            color: #e040fb;
+            margin-top: 0;
+        }
+
+        .scene-tag {
+            display: inline-block;
+            background: #4a148c;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .tech-block {
+            background: #0d0d1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            border-left: 3px solid #7c4dff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c4dff, #e040fb);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .disclaimer {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ketamine Dreams</h1>
+    <img class="hero-img" src="images/ralph.png">
+    <p class="subtitle">A browser-based psychedelic journey through procedurally generated dreamscapes.</p>
+
+    <section>
+        <h2>The Idea</h2>
+        <p>Ketamine Dreams began as an experiment in procedural visuals and evolved into something more personal.
+            Using Three.js, GLSL shaders, and a touch of daily-seeded randomness, the project attempts to translate
+            the sensation of a dissociative state into something viewable through any modern browser. No downloads, no
+            installations — just open the link and drift.</p>
+        <p>The inspiration comes from real experiences. Each scene maps to a distinct phase or feeling, from the
+            infinite corridors of ego dissolution to the claustrophobic comfort of a small enclosed space. The music
+            track by Ellie Goulding was chosen to anchor the atmosphere.</p>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <p>Under the hood, Ketamine Dreams is a real-time WebGL application. Every frame is generated client-side using
+            a deterministic seed tied to the current date. This means anyone who joins on the same day sees the same
+            environment, even if movement and camera control remain individual.</p>
+        <p>The post-processing stack layers bloom, edge detection, chromatic aberration, scanlines, and melt
+            transitions to produce the signature warped, dreamlike aesthetic. A lightweight UI lets viewers tweak
+            parameters on the fly.</p>
+        <p>Built with peer-to-peer multi-user support, the experience doubles as a shared visual canvas — think of it
+            as a hallucination you can project for a venue, a DJ set, or a group viewing.</p>
+    </section>
+
+    <section>
+        <h2>The Four Worlds</h2>
+
+        <div class="scene-card">
+            <span class="scene-tag">// nexus</span>
+            <h3>The Nexus</h3>
+            <p>The transitional space between scenes. An endless grid of shifting walls that feels both vast and
+                constrained. Ego fades, patterns emerge, and the geometry itself seems alive. Wall materials morph
+                through GLSL shaders, their hue dictated by the day's seed.</p>
+            <div class="tech-block">Instanced wall primitives + dynamic GLSL material morphing + bloom-driven emissive
+                channels + edge-contrast post-processing</div>
+        </div>
+
+        <div class="scene-card">
+            <span class="scene-tag">// space</span>
+            <h3>Sparse Space</h3>
+            <p>The void at the peak of the experience. Minimal geometry scattered across a massive coordinate field.
+                Visual density comes almost entirely from the post-processing pipeline — chromatic aberration and
+                scanlines fill the emptiness with texture. Camera speed is uncapped here, inviting high-velocity
+                traversal through the cosmos.</p>
+            <div class="tech-block">Sparse volumetric primitives + chromatic aberration pass + scanline overlay +
+                uncapped camera velocity</div>
+        </div>
+
+        <div class="scene-card">
+            <span class="scene-tag">// lumber</span>
+            <h3>Lumber</h3>
+            <p>Chaos takes over. A dense forest of columnar shapes with bark-like materials that breathe and warp. The
+                more you move, the more the scene distorts. Custom shaders drive organic surface variation, and a
+                secondary displacement map creates a pulsing effect across every vertical surface.</p>
+            <div class="tech-block">Columnar geometry forest + custom organic shader + fold-intensity warping +
+                vein-speed displacement map</div>
+        </div>
+
+        <div class="scene-card">
+            <span class="scene-tag">// liminal</span>
+            <h3>Liminal</h3>
+            <p>The cube. A small, familiar-yet-uncanny room where movement is restricted and the bloom softens to a
+                haze. This is the quietest scene, designed for reflection. Melt transitions are most prominent here,
+                blurring the line between one dream state and the next.</p>
+            <div class="tech-block">Low-frequency geometry + muted color channels + reduced bloom radius + enhanced
+                melt transitions</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Tech Stack</h2>
+        <ul>
+            <li>Three.js — WebGL 3D rendering</li>
+            <li>GLSL Shaders — real-time material morphing</li>
+            <li>Post-processing pipeline — bloom, edge detection, chromatic aberration, scanlines</li>
+            <li>Daily-seeded determinism — shared experience across users</li>
+            <li>Peer-to-peer multi-user support</li>
+        </ul>
+    </section>
+
+    <section style="text-align: center;">
+        <a href="https://sauceynchill.vip/ket" class="cta-button" target="_blank">Launch Experience</a>
+    </section>
+
+    <p class="disclaimer">Version 0.0.1 — AI was used to assist with code optimization. Originally forked from
+        LMStudioWebUI and evolved into a personal art project.</p>
+</body>
+
+</html>
