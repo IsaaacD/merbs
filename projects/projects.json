@@ -4,17 +4,33 @@
             "title": "Lemmy Nanny",
             "description": "A project mostly hand written to use AI (Ollama local models) to monitor Lemmy instances to add to a mod to a mod queue so moderators can keep their Lemmy instances tidy.",
             "image": "./images/LemmyNannyLogo.png",
-            "link": "#",
+            "link": "#lemmy-nanny",
             "githubLink": "https://github.com/IsaaacD/LemmyNanny",
-            "template": "projects/LemmyNanny.md"
+            "template": "projects/LemmyNanny.html"
         },
         {
             "title": "Ketamine Dreams",
-            "description": "Started as a fork of LMStudioWebUI, but I have been working on it to make it more user friendly and add more features. I was then playing with AI to make some psychedelic art and then I started to make it a personal art project",
+            "description": "I have been playing with AI to make some psychedelic art and then I started to make it a personal art project",
             "image": "./images/ralph.png",
-            "link": "#",
-            "githubLink": "https://github.com/IsaaacD/LMStudioWebUI",
+            "link": "#ket-dreams",
+            "githubLink": "https://github.com/IsaaacD/ket-dreams",
             "template": "projects/KetamineDreams.html"
+        },
+        {
+            "title": "LMStudioWebUI",
+            "description": "A browser-based chat interface for interacting with your LM Studio server from any device",
+            "image": "https://github.com/user-attachments/assets/7944a30a-6e52-467b-bf27-309f8db0bfde",
+            "link": "#lm-studio",
+            "githubLink": "https://github.com/IsaaacD/LMStudioWebUI",
+            "template": "projects/LMStudioWebUI.html"
+        },
+        {
+            "title": "Merbs",
+            "description": "A customizable portfolio site for GitHub Pages, driven by projects.json and per-project HTML pages",
+            "image": "./images/project.jpg",
+            "link": "#merbs",
+            "githubLink": "https://github.com/IsaaacD/merbs",
+            "template": "projects/merbs.html"
         }
     ]
 }

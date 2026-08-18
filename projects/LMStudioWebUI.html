@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LMStudioWebUI</title>
+    <style>
+        .scene-card {
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #1a1a2e;
+        }
+
+        .scene-card h3 {
+            color: #e040fb;
+            margin-top: 0;
+        }
+
+        .scene-tag {
+            display: inline-block;
+            background: #4a148c;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .tech-block {
+            background: #0d0d1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            border-left: 3px solid #7c4dff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c4dff, #e040fb);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .disclaimer {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LMStudioWebUI</h1>
+    <p class="subtitle">A browser-based chat interface for interacting with your LM Studio server from any device.</p>
+    <img src="https://github.com/user-attachments/assets/7944a30a-6e52-467b-bf27-309f8db0bfde" />
+    <section>
+        <h2>The Idea</h2>
+        <p>LMStudioWebUI is a web-based chat client that connects to your locally hosted LM Studio server. It lets you
+            chat with your local AI models from any device on your network — including phones and tablets — without
+            needing the LM Studio desktop app installed on each device.</p>
+        <p>The app uses no backend server. All communication is direct between your browser and the LM Studio server,
+            keeping everything local and private.</p>
+    </section>
+
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li>Dark mode interface with purple theme</li>
+            <li>Connect to any LM Studio server (custom address and port)</li>
+            <li>LaTeX math rendering via MathJax</li>
+            <li>Markdown rendering with syntax-highlighted code blocks (Highlight.js)</li>
+            <li>Mobile-friendly design</li>
+            <li>Multiple chat sessions with IndexedDB persistence</li>
+            <li>Vision model support with image upload</li>
+            <li>Model selection dropdown</li>
+            <li>Export chats as HTML or Markdown</li>
+            <li>Debug console via <code>?debug</code> URL parameter</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <p>The app is a static website — just HTML, CSS, and JavaScript. No build step, no backend. You start LM Studio
+            in server mode, point the web UI at your server address, and start chatting.</p>
+        <p>Chat history is persisted in the browser using IndexedDB, so your conversations survive page refreshes. You
+            can export any chat as HTML or Markdown for offline reference.</p>
+    </section>
+
+    <section>
+        <h2>Tech Stack</h2>
+        <ul>
+            <li>Vanilla JavaScript — no framework dependencies</li>
+            <li>IndexedDB — client-side chat persistence</li>
+            <li>MathJax — LaTeX math rendering</li>
+            <li>Highlight.js — code syntax highlighting</li>
+            <li>Marked.js — Markdown rendering</li>
+            <li>Eruda — mobile debug console</li>
+            <li>GitHub Pages — zero-setup deployment</li>
+        </ul>
+    </section>
+
+    <section style="text-align: center;">
+        <a href="https://isaaacd.github.io/LMStudioWebUI/" class="cta-button" target="_blank">Launch Web UI</a>
+    </section>
+
+    <p class="disclaimer">Unofficial project — not affiliated with or endorsed by LM Studio</p>
+</body>
+
+</html>

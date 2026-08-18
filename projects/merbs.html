@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Merbs</title>
+    <style>
+        .scene-card {
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #1a1a2e;
+        }
+
+        .scene-card h3 {
+            color: #e040fb;
+            margin-top: 0;
+        }
+
+        .scene-tag {
+            display: inline-block;
+            background: #4a148c;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .tech-block {
+            background: #0d0d1a;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            border-left: 3px solid #7c4dff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c4dff, #e040fb);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .disclaimer {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Merbs</h1>
+    <p class="subtitle">A lightweight, customizable portfolio site built for GitHub Pages.</p>
+    <img src="./images/project.jpg" />
+    <section>
+        <h2>The Idea</h2>
+        <p>Merbs is a portfolio website designed to be hosted on GitHub Pages with zero build step. It uses vanilla
+            HTML, CSS, and JavaScript for fast, simple deployment. The entire site is driven by a single
+            <code>projects.json</code> configuration file that defines your project cards, and individual HTML template
+            files for each project's detail page.</p>
+        <p>The goal is a fast, minimal portfolio that showcases your work without the overhead of a framework or build
+            pipeline. Clone it, drop in your projects, and deploy.</p>
+    </section>
+
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li>Zero build step — just HTML, CSS, and vanilla JavaScript</li>
+            <li>Project cards driven by a single <code>projects.json</code> config file</li>
+            <li>Per-project HTML templates loaded in a modal on click</li>
+            <li>GitHub contribution graph visualization</li>
+            <li>Three.js animated background</li>
+            <li>Dark theme with purple accent colors</li>
+            <li>Mobile-friendly responsive design</li>
+            <li>Markdown rendering via Marked.js for project content</li>
+            <li>Hosted directly on GitHub Pages</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How It Works</h2>
+        <p>Edit <code>projects/projects.json</code> to add, remove, or reorder project cards. Each project entry
+            specifies a title, description, image, link, GitHub URL, and an associated HTML template file in the
+            <code>projects/</code> directory.</p>
+        <p>When a visitor clicks a project card, the site loads the corresponding HTML template into a modal overlay,
+            displaying the full project details without leaving the page.</p>
+    </section>
+
+    <section>
+        <h2>Tech Stack</h2>
+        <ul>
+            <li>Vanilla JavaScript — no framework dependencies</li>
+            <li>CSS — custom dark theme styling</li>
+            <li>Three.js — animated background visualization</li>
+            <li>Marked.js — Markdown rendering</li>
+            <li>GitHub API — contribution graph data</li>
+            <li>GitHub Pages — zero-setup deployment</li>
+        </ul>
+    </section>
+
+    <section style="text-align: center;">
+        <a href="https://github.com/IsaaacD/merbs" class="cta-button" target="_blank">View on GitHub</a>
+    </section>
+</body>
+
+</html>
