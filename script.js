@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const projectsContainer = document.querySelector('.projects');
     const modal = document.getElementById('projectModal');
     const modalContent = document.getElementById('modalContent');
+    const modalContentEl = document.querySelector('.modal-content');
     const closeBtn = document.querySelector('.close');
 
     function closeModal() {
@@ -134,6 +135,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 } else {
                     modalContent.innerHTML = marked.parse(md);
                 }
+                modalContentEl.scrollTop = 0;
             })
             .catch(error => {
                 console.error('Error loading template:', error);

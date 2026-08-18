@@ -144,13 +144,16 @@
 
     <section>
         <h2>Technologies Used</h2>
-        <p>Built with Node.js, Express, and integrated with Ollama for local AI processing.</p>
+        <p>Built with .NET 8.0, integrated with Ollama for local AI processing, dotNETLemmy for Lemmy API access, and SQLite for local persistence.</p>
     </section>
 
     <section>
         <h2>Installation</h2>
-        <pre><code>npm install lemmy-nanny
-npm start</code></pre>
+        <pre><code>git clone https://github.com/IsaaacD/LemmyNanny.git
+cd LemmyNanny
+dotnet restore
+dotnet run</code></pre>
+        <p>Configure <code>appsettings.json</code> with your Lemmy instance URL, Ollama endpoint, AI model, and moderation prompt.</p>
     </section>
 </body>
 
