@@ -13,14 +13,95 @@ body {
     padding: 20px;
 }
 
-header {
-    text-align: center;
+.card {
+    background: rgba(246, 246, 246, 0.06);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid rgba(108, 92, 231, 0.15);
+    backdrop-filter: blur(4px);
+    border-top: 0.5em solid #4048bc;
+    border-left: 0.5em solid #4048bc;
+}
+
+header.profile-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
     margin-bottom: 40px;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.profile-img-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: #b0b0f9;
+    transition: color 0.3s ease;
+}
+
+.profile-img-link:hover {
+    color: #fff;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6c5ce7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.6);
+}
+
+.profile-link-text {
+    margin-top: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-info h1 {
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.profile-info h2 {
+    font-size: 1.3em;
+    margin: 0 0 6px;
+    font-weight: normal;
+    color: #b0b0b0;
+}
+
+.profile-info h3 {
+    font-size: 1em;
+    margin: 0 0 12px;
+    font-weight: normal;
+    color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.profile-info h3 img {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+.container {
+    background: #0a0a1a73;
+
 }
 
 .projects {
@@ -30,17 +111,11 @@ h1 {
 }
 
 .project-card {
-    background: rgba(246, 246, 246, 0.06);
-    border-radius: 8px;
-    padding: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(108, 92, 231, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
-    backdrop-filter: blur(4px);
-    border: 1px solid;
     position: relative;
 }
 
@@ -109,20 +184,12 @@ a:hover {
 }
 
 .modal-content {
-    background-color: rgba(0, 0, 0, 0.44);
     margin: 2% auto;
-    padding: 2em;
-    border-radius: 8px;
-    max-width: 1000px;
+    max-width: 800px;
     position: relative;
     max-height: 82%;
     overflow-y: auto;
     color: #e0e0e0;
-    border: 1px solid;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: currentcolor;
-    border-top: 2em solid blue;
 }
 
 .close {
@@ -148,8 +215,102 @@ a:hover {
     text-align: left !important;
 }
 
+@media (max-width: 600px) {
+    header.profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-info .intro {
+        text-align: center !important;
+    }
+}
+
 .hero-img {
     width: 100%;
+}
+
+/* Contributions Summary */
+.contributions-section {
+    margin: 30px 0 40px;
+}
+
+.contributions-section h3 {
+    margin-bottom: 12px;
+}
+
+.contributions-grid {
+    background: rgba(246, 246, 246, 0.04);
+    border-radius: 8px;
+    padding: 20px 24px;
+    border: 1px solid rgba(108, 92, 231, 0.15);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.contrib-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.contrib-text {
+    font-size: 0.95em;
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contrib-icon {
+    flex-shrink: 0;
+}
+
+.contrib-count {
+    color: #39d353;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.contrib-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #b0b0f9;
+    font-size: 0.9em;
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.contrib-link:hover {
+    color: #fff;
+    background: rgba(108, 92, 231, 0.15);
+    border-color: #6c5ce7;
+}
+
+.contrib-link svg {
+    transition: transform 0.2s;
+}
+
+.contrib-link:hover svg {
+    transform: translate(1px, -1px);
+}
+
+.contrib-error {
+    color: #e74c3c;
+    text-align: center;
+    padding: 20px;
 }
 
 .click-me {

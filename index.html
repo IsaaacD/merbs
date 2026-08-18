@@ -10,9 +10,13 @@
 
 <body>
     <div class="container">
-        <header>
-            <h1>Isaac Dow</h1>
-            <div>
+        <header class="card profile-card">
+            <a href="https://www.linkedin.com/in/isaac-dow/" target="_blank" class="profile-img-link">
+                <img src="images/linkedinprofile.jpeg" alt="LinkedIn Profile" class="profile-img">
+                <span class="profile-link-text">LinkedIn</span>
+            </a>
+            <div class="profile-info">
+                <h1>Isaac Dow</h1>
                 <h2>Full Stack Software Developer</h2>
                 <h3><img src="images/pin.svg">New Hamburg, Ontario, Canada</h3>
                 <p class="intro">
@@ -34,6 +38,9 @@
             </div> -->
         </header>
         <main>
+            <div class="contributions-section">
+                <div class="contributions-grid"></div>
+            </div>
             <h3>Personal Projects</h3>
             <p>Click on the card to view additonal details, or browse the source linked in the card footer!</p>
             <div class="projects">
@@ -52,7 +59,7 @@
     </footer>
     <!-- Modal -->
     <div id="projectModal" class="modal">
-        <div class="modal-content">
+        <div class="card modal-content">
             <div class="close-holder">
                 <span class="close">&times;</span>
             </div>
@@ -62,6 +69,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="libs/marked.min.js"></script>
     <script src="script/three-background.js"></script>
+    <script src="script/github-contributions.js"></script>
     <script src="script.js"></script>
 </body>
 

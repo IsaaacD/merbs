@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     projects.forEach(project => {
         const projectCard = document.createElement('div');
-        projectCard.className = 'project-card';
+        projectCard.className = 'card project-card';
 
         let contentHtml = '<span class="click-me">☟</span>';
         if (project.image) {

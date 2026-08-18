@@ -168,21 +168,24 @@ class FloatingTextBackground {
         mesh.position.set(pos.x, pos.y, pos.z);
 
         mesh.userData = {
+            baseX: pos.x,
             baseY: pos.y,
             baseRotationZ: (Math.random() - 0.5) * 0.1,
             floatSpeedX: 0.1 + Math.random() * 0.5,
             floatSpeedY: 0.1 + Math.random() * 0.5,
-            floatAmplitudeX: 1 + Math.random() * 3,
-            floatAmplitudeY: 1 + Math.random() * 3,
+            floatAmplitudeX: 0.5 + Math.random() * 1.5,
+            floatAmplitudeY: 0.5 + Math.random() * 1.5,
             phaseX: Math.random() * Math.PI * 2,
             phaseY: Math.random() * Math.PI * 2,
+            phase: Math.random() * Math.PI * 2,
             currentOpacity: 0,
-            fadeInSpeed: 0.05 + Math.random() * 0.25,
-            fadeOutSpeed: 0.05 + Math.random() * 0.2,
+            fadeInSpeed: 0.005 + Math.random() * 0.025,
+            fadeOutSpeed: 0.005 + Math.random() * 0.02,
             maxOpacity: 0.05 + Math.random() * 0.12,
             activeDuration: 4 + Math.random() * 8,
             lifetime: 0,
             state: 'entering',
+            loggedVisible: false,
             rotationSpeed: (Math.random() - 0.5) * 0.002,
             texture: texture,
             geometry: geometry
@@ -269,11 +272,13 @@ class FloatingTextBackground {
                 );
                 if (ud.currentOpacity >= ud.maxOpacity) {
                     ud.state = 'active';
+                    console.log('[TextBG] Active:', mesh.material.map.image, 'opacity:', ud.currentOpacity.toFixed(3), 'max:', ud.maxOpacity.toFixed(3));
                 }
             } else if (ud.state === 'active') {
                 ud.currentOpacity = ud.maxOpacity;
                 if (activeTime > ud.activeDuration) {
                     ud.state = 'exiting';
+                    console.log('[TextBG] Exiting, activeTime:', activeTime.toFixed(1), 'duration:', ud.activeDuration);
                 }
             } else if (ud.state === 'exiting') {
                 ud.currentOpacity = Math.max(
@@ -281,14 +286,19 @@ class FloatingTextBackground {
                     0
                 );
                 if (ud.currentOpacity <= 0) {
+                    console.log('[TextBG] Respawn');
                     this._respawnText(mesh);
                 }
             }
 
             mesh.material.opacity = ud.currentOpacity || 0;
+            if (ud.currentOpacity > 0.1 && !ud.loggedVisible) {
+                ud.loggedVisible = true;
+                console.log('[TextBG] Visible!', 'opacity:', ud.currentOpacity.toFixed(3), 'pos:', mesh.position.x.toFixed(1), '/', mesh.position.y.toFixed(1), '/', mesh.position.z.toFixed(1), 'size:', mesh.geometry?.parameters?.width?.toFixed(1), 'x', mesh.geometry?.parameters?.height?.toFixed(1));
+            }
 
-            mesh.position.x += Math.sin(elapsed * ud.floatSpeedX + ud.phaseX) * ud.floatAmplitudeX * delta;
-            mesh.position.y = ud.baseY + Math.sin(elapsed * ud.floatSpeedY + ud.phaseY) * ud.floatAmplitudeY * delta;
+            mesh.position.x = ud.baseX + Math.sin(elapsed * ud.floatSpeedX + ud.phaseX) * ud.floatAmplitudeX;
+            mesh.position.y = ud.baseY + Math.sin(elapsed * ud.floatSpeedY + ud.phaseY) * ud.floatAmplitudeY;
             mesh.position.z += Math.sin(elapsed * 0.1 + ud.phase) * 0.002;
 
             mesh.rotation.z = ud.baseRotationZ + Math.sin(elapsed * 0.5 + ud.phase) * 0.02;
@@ -330,16 +340,24 @@ class FloatingTextBackground {
 
         const pos = this._marginPosition();
         mesh.position.set(pos.x, pos.y, pos.z);
+        ud.baseX = pos.x;
         ud.baseY = pos.y;
         mesh.rotation.y = 0;
 
         ud.state = 'entering';
         ud.lifetime = 0;
         ud.delay = 0;
-        ud.maxOpacity = 0.05 + Math.random() * 0.12;
+        ud.maxOpacity = 0.3 + Math.random() * 0.5;
         ud.fadeInSpeed = 0.005 + Math.random() * 0.025;
         ud.fadeOutSpeed = 0.005 + Math.random() * 0.02;
         ud.activeDuration = 4 + Math.random() * 8;
+        ud.floatSpeedX = 0.1 + Math.random() * 0.5;
+        ud.floatSpeedY = 0.1 + Math.random() * 0.5;
+        ud.floatAmplitudeX = 0.5 + Math.random() * 1.5;
+        ud.floatAmplitudeY = 0.5 + Math.random() * 1.5;
+        ud.phaseX = Math.random() * Math.PI * 2;
+        ud.phaseY = Math.random() * Math.PI * 2;
+        ud.loggedVisible = false;
     }
 
     _updateParticles(delta) {
