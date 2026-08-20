@@ -6,82 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isaac Dow - Personal Portfolio</title>
     <link href="style.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <body>
-    <div class="container">
-        <header class="card profile-card">
-            <a href="https://www.linkedin.com/in/isaac-dow/" target="_blank" class="profile-img-link">
-                <img src="images/linkedinprofile.jpeg" alt="LinkedIn Profile" class="profile-img">
-                <span class="profile-link-text">LinkedIn</span>
-            </a>
-            <div class="profile-info">
-                <h1>Isaac Dow</h1>
-                <h2>Full Stack Software Developer</h2>
-                <h3><img src="images/pin.svg">New Hamburg, Ontario, Canada</h3>
-                <p class="intro">
-                    This site is a profile to highlight some of the code I've written in my spare time. If you're here
-                    you hopefully have my resume and hoping that you're interested in what you see here.
-                </p>
-                <p class="intro">
-                    This site is hosted on Github Pages and uses vanilla JS and HTML/CSS for fastest performance. I know
-                    how to use front-end UI frameworks but when I'm just hacking source that doesn't need updating much
-                    I tend to write vanilla.
-                </p>
+    <div class="synthwave-horizon"></div>
+    <div id="impress">
+        <!-- Slide 1: Overview Hub -->
+        <div id="overview" class="step" data-x="0" data-y="0" data-scale="2" data-accent="#6c5ce7">
+            <div class="overview-layout">
+                <div class="overview-profile">
+                    <a href="https://www.linkedin.com/in/isaac-dow/" target="_blank" class="profile-img-link">
+                        <img src="images/linkedinprofile.jpeg" alt="LinkedIn Profile"
+                            class="profile-img overview-profile-img">
+                        <span class="profile-link-text">LinkedIn</span>
+                    </a>
+                    <h1 style="font-size: 1.8em; margin: 12px 0 4px;">Isaac Dow</h1>
+                    <h2 style="font-size: 1.1em; margin: 0 0 6px; font-weight: normal; color: #b0b0b0;">Full Stack
+                        Software Developer</h2>
+                    <p
+                        style="color: #a0a0a0; margin: 0; font-size: 0.95em; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                        <img src="images/pin.svg" style="width: 14px; height: 14px;"> New Hamburg, Ontario, Canada
+                    </p>
+                </div>
+                <div class="hub-cards">
+                    <div class="hub-card" data-goto="profile">
+                        <h3>About Me</h3>
+                        <p>Full profile &amp; background</p>
+                    </div>
+                    <div class="hub-card" data-goto="competencies">
+                        <h3>Competencies</h3>
+                        <p>Skills &amp; expertise</p>
+                    </div>
+                    <div class="hub-card" data-goto="github-stats">
+                        <h3>GitHub Stats</h3>
+                        <p>Recent contributions</p>
+                    </div>
+                    <div class="hub-card" data-goto="projects-hub">
+                        <h3>Projects</h3>
+                        <p>Public projects</p>
+                    </div>
+                </div>
             </div>
-            <!-- <div class="github-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.495 0 2.866.62 3.307 1.232a9.549 9.549 0 0 1 .118 3.176C15.432 6.44 16.099 7.51 16.099 8.821c0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C18.566 21.797 22 17.299 22 12c0-6.627-5.373-12-12-12Z" />
-                </svg>
-                <a href="https://github.com" target="_blank">View on GitHub</a>
-            </div> -->
-        </header>
-        <section class="card competencies-card">
-            <h2>Core Competencies</h2>
-            <ul class="competencies-list">
-                <li><strong>Full-Stack Development:</strong> C#, .NET 10.0, ASP.NET MVC, ASP.NET Core, TypeScript, JavaScript, HTML5, CSS, Bootstrap, Angular, Vue</li>
-                <li><strong>Cloud &amp; DevOps:</strong> Microsoft Azure, AWS, Google Cloud, Docker, Kubernetes, CI/CD (Azure DevOps, Jenkins, GitHub Actions), GitHub Copilot, AAD/ADFS</li>
-                <li><strong>API &amp; Integration:</strong> RESTful APIs, Web Services, SOA, Microservices, JSON, Entity Framework, ADO.NET, OAuth2</li>
-                <li><strong>Databases &amp; Data:</strong> MS SQL Server, T-SQL, SSRS, tSQLt, Entity Framework, EF Core, Postgres</li>
-                <li><strong>Tools &amp; Platforms:</strong> Visual Studio, VS Code, Git, TFS, Azure DevOps, Jira, Rally, Jenkins, ELK Stack, SonarQube, Veracode, Legit Security</li>
-                <li><strong>Methodologies:</strong> Agile/Scrum, KANBAN, Test-Driven Development (TDD), Unit/Integration Testing (xUnit, NUnit, Moq)</li>
-                <li><strong>Leadership &amp; Collaboration:</strong> Team Mentorship, Code Reviews, Technical Documentation, Cross-Functional Collaboration, Stakeholder Engagement</li>
-            </ul>
-        </section>
-        <main>
+            <p class="impress-next">Use arrow keys, click cards or mini-map to naviagate</p>
+        </div>
+
+        <!-- Slide 2: Profile -->
+        <div id="profile" class="step" data-x="1000" data-y="0" data-rotate-y="90" data-scale="1" data-accent="#e040fb">
+            <a class="back-nav" data-goto="overview">&larr; Back to Overview</a>
+            <header class="card profile-card">
+                <a href="https://www.linkedin.com/in/isaac-dow/" target="_blank" class="profile-img-link">
+                    <img src="images/linkedinprofile.jpeg" alt="LinkedIn Profile" class="profile-img">
+                    <span class="profile-link-text">LinkedIn</span>
+                </a>
+                <div class="profile-info">
+                    <h1>Isaac Dow</h1>
+                    <h2>Full Stack Software Developer</h2>
+                    <h3><img src="images/pin.svg">New Hamburg, Ontario, Canada</h3>
+                    <p class="intro">
+                        This site is a profile to highlight some of the code I've written in my spare time. If you're
+                        here
+                        you hopefully have my resume and hoping that you're interested in what you see here.
+                    </p>
+                    <p class="intro">
+                        This site is hosted on Github Pages and uses vanilla JS and HTML/CSS for fastest performance. I
+                        know
+                        how to use front-end UI frameworks but when I'm just hacking source that doesn't need updating
+                        much
+                        I tend to write vanilla.
+                    </p>
+                </div>
+            </header>
+        </div>
+
+        <!-- Slide 3: Competencies -->
+        <div id="competencies" class="step" data-x="2000" data-y="0" data-rotate-y="180" data-scale="1"
+            data-accent="#00cec9">
+            <a class="back-nav" data-goto="overview">&larr; Back to Overview</a>
+            <section class="card competencies-card">
+                <h2>Core Competencies</h2>
+                <ul class="competencies-list">
+                    <li><strong>Full-Stack Development:</strong> C#, .NET 10.0, ASP.NET MVC, ASP.NET Core, TypeScript,
+                        JavaScript, HTML5, CSS, Bootstrap, Angular, Vue</li>
+                    <li><strong>Cloud &amp; DevOps:</strong> Microsoft Azure, AWS, Google Cloud, Docker, Kubernetes,
+                        CI/CD (Azure DevOps, Jenkins, GitHub Actions), GitHub Copilot, AAD/ADFS</li>
+                    <li><strong>API &amp; Integration:</strong> RESTful APIs, Web Services, SOA, Microservices, JSON,
+                        Entity Framework, ADO.NET, OAuth2</li>
+                    <li><strong>Databases &amp; Data:</strong> MS SQL Server, T-SQL, SSRS, tSQLt, Entity Framework, EF
+                        Core, Postgres</li>
+                    <li><strong>Tools &amp; Platforms:</strong> Visual Studio, VS Code, Git, TFS, Azure DevOps, Jira,
+                        Rally, Jenkins, ELK Stack, SonarQube, Veracode, Legit Security</li>
+                    <li><strong>Methodologies:</strong> Agile/Scrum, KANBAN, Test-Driven Development (TDD),
+                        Unit/Integration Testing (xUnit, NUnit, Moq)</li>
+                    <li><strong>Leadership &amp; Collaboration:</strong> Team Mentorship, Code Reviews, Technical
+                        Documentation, Cross-Functional Collaboration, Stakeholder Engagement</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Slide 4: GitHub Stats -->
+        <div id="github-stats" class="step" data-x="0" data-y="1000" data-rotate-X="90" data-scale="1"
+            data-accent="#39d353">
+            <a class="back-nav" data-goto="overview">&larr; Back to Overview</a>
+            <h1 class="slide-title">GitHub Contributions</h1>
             <div class="contributions-section">
                 <div class="contributions-grid"></div>
             </div>
-            <h3>Public Projects</h3>
-            <p>Click on the card to view additonal details, or browse the source linked in the card footer!</p>
-            <div class="projects">
-                <!-- Project cards will be added here -->
-            </div>
-        </main>
-    </div>
-    <footer>
-        <!-- <div class="github-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.495 0 2.866.62 3.307 1.232a9.549 9.549 0 0 1 .118 3.176C15.432 6.44 16.099 7.51 16.099 8.821c0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C18.566 21.797 22 17.299 22 12c0-6.627-5.373-12-12-12Z" />
-            </svg>
-            <a href="https://github.com" target="_blank">View on GitHub</a>
-        </div> -->
-    </footer>
-    <!-- Modal -->
-    <div id="projectModal" class="modal">
-        <div class="card modal-content">
-            <div class="close-holder">
-                <span class="close">&times;</span>
-            </div>
-            <div id="modalContent"></div>
         </div>
+
+        <!-- Slide 5: Projects Hub -->
+        <div id="projects-hub" class="step" data-x="-1000" data-y="0" data-rotate-y="-90" data-scale="1"
+            data-accent="#fdcb6e">
+            <a class="back-nav" data-goto="overview">&larr; Back to Overview</a>
+            <h1 class="slide-title">Public Projects</h1>
+            <p style="text-align: center; color: #a0a0a0; margin-bottom: 20px;">Click a card to expand details, or
+                navigate to a full project slide</p>
+            <div class="projects">
+                <!-- Project cards injected dynamically -->
+            </div>
+        </div>
+
+        <!-- Individual project slides injected dynamically -->
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Mini-map -->
+    <div class="minimap" id="minimap">
+        <!-- Dots injected dynamically -->
+    </div>
+
+    <!-- Mobile nav buttons -->
+    <div class="mobile-nav">
+        <button class="mobile-nav-btn mobile-nav-prev" id="btnPrev">&#9664;</button>
+        <button class="mobile-nav-btn mobile-nav-next" id="btnNext">&#9654;</button>
+    </div>
+
+    <script src="libs/impress.min.js"></script>
     <script src="libs/marked.min.js"></script>
-    <script src="script/three-background.js"></script>
     <script src="script/github-contributions.js"></script>
     <script src="script.js"></script>
 </body>
