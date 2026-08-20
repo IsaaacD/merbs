@@ -663,8 +663,10 @@ header.profile-card {
     .step {
         max-width: 95vw;
         padding: 16px;
-        max-height: 95vh;
-        overflow-y: auto;
+        max-height: 95vh !important;
+        height: auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
     }
 
     .overview-layout {
@@ -720,53 +722,6 @@ header.profile-card {
     .overview-profile-img {
         width: 90px;
         height: 90px;
-    }
-}
-
-/* High-DPI mobile (iPhone X and newer): bump font sizes */
-@media (max-width: 600px) and (min-resolution: 3dppx) {
-    body {
-        font-size: 18px;
-    }
-
-    .profile-info h1 {
-        font-size: 2.8em;
-    }
-
-    .profile-info h2 {
-        font-size: 1.6em;
-    }
-
-    .profile-info h3 {
-        font-size: 1.2em;
-    }
-
-    .slide-title {
-        font-size: 2.2em;
-    }
-
-    .hub-card h3 {
-        font-size: 1.5em;
-    }
-
-    .hub-card p {
-        font-size: 1.15em;
-    }
-
-    .competencies-list li {
-        font-size: 1.1em;
-    }
-
-    .project-card h2 {
-        font-size: 1.8em;
-    }
-
-    .back-nav {
-        font-size: 1.1em;
-    }
-
-    .impress-next {
-        font-size: 1em;
     }
 }
 

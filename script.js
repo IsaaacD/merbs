@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     if (isMobile) adjustStepsForMobile();
 
+    if (isMobile && window.devicePixelRatio >= 2) {
+        document.documentElement.style.fontSize = '30px';
+        document.body.style.fontSize = '30px';
+    }
+
     apiImpress = impress();
 
     document.addEventListener('impress:stepenter', function (e) {
@@ -120,7 +125,7 @@ function loadTemplate(templateUrl, targetEl) {
         .catch(error => {
             console.error('Error loading template:', error);
             targetEl.innerHTML = '<p style="color: #e74c3c;">Error loading project details.</p>';
-    });
+        });
 }
 
 
